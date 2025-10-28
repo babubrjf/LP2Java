@@ -57,35 +57,6 @@
 			"salarioBase": 6000.00
 		}
 	],
-	"folhasPagamento": [
-		{
-			"id": 1,
-			"idColaborador": 1,
-			"mes": 10,
-			"ano": 2025,
-			"salarioBruto": 7500.00,
-			"totalDescontos": 1350.50,
-			"salarioLiquido": 6149.50
-		},
-		{
-			"id": 2,
-			"idColaborador": 2,
-			"mes": 10,
-			"ano": 2025,
-			"salarioBruto": 4800.00,
-			"totalDescontos": 890.00,
-			"salarioLiquido": 3910.00
-		},
-		{
-			"id": 3,
-			"idColaborador": 3,
-			"mes": 10,
-			"ano": 2025,
-			"salarioBruto": 6000.00,
-			"totalDescontos": 1100.00,
-			"salarioLiquido": 4900.00
-		}
-	],
 	"registroPonto": [
 		{
 			"id": 1,
@@ -147,99 +118,6 @@
 			"tipoDocumento": "ExameMedico",
 			"nomeArquivo": "exame_periodico_carlos.pdf",
 			"dataEmissao": "2025-02-10"
-		}
-	],
-	"lancamentosFinanceirosConfig": [
-		{
-			"id": 101,
-			"descricao": "Salário Base",
-			"tipo": "Provento"
-		},
-		{
-			"id": 102,
-			"descricao": "Bônus",
-			"tipo": "Provento"
-		},
-		{
-			"id": 103,
-			"descricao": "Horas Extras",
-			"tipo": "Provento"
-		},
-		{
-			"id": 201,
-			"descricao": "INSS",
-			"tipo": "Desconto"
-		},
-		{
-			"id": 202,
-			"descricao": "Vale Transporte",
-			"tipo": "Desconto"
-		},
-		{
-			"id": 203,
-			"descricao": "Plano de Saúde",
-			"tipo": "Desconto"
-		},
-		{
-			"id": 204,
-			"descricao": "Adiantamento Salarial",
-			"tipo": "Desconto"
-		}
-	],
-	"despesas": [
-		{
-			"id": 1,
-			"idDepartamento": 1,
-			"descricao": "Licenças de Software (IDE)",
-			"valor": 1250.00,
-			"data": "2025-10-15"
-		},
-		{
-			"id": 2,
-			"idDepartamento": 2,
-			"descricao": "Anúncio de Vaga (LinkedIn)",
-			"valor": 600.00,
-			"data": "2025-10-20"
-		},
-		{
-			"id": 3,
-			"idDepartamento": 1,
-			"descricao": "Servidor Cloud (AWS)",
-			"valor": 2100.00,
-			"data": "2025-10-05"
-		},
-		{
-			"id": 4,
-			"idDepartamento": 2,
-			"descricao": "Treinamento de Liderança",
-			"valor": 3000.00,
-			"data": "2025-09-30"
-		}
-	],
-	"registrosAtividade": [
-		{
-			"id": 1,
-			"idUsuario": 1,
-			"acao": "Login no sistema.",
-			"dataHora": "2025-10-28T09:00:10"
-		},
-		{
-			"id": 2,
-			"idUsuario": 3,
-			"acao": "Aprovou Folha de Pagamento (Ref: 09/2025).",
-			"dataHora": "2025-10-28T09:30:15"
-		},
-		{
-			"id": 3,
-			"idUsuario": 3,
-			"acao": "Cadastrou novo documento para Pablo Rodrigues.",
-			"dataHora": "2025-10-28T10:15:00"
-		},
-		{
-			"id": 4,
-			"idUsuario": 1,
-			"acao": "Alterou dados do departamento Desenvolvimento.",
-			"dataHora": "2025-10-28T11:05:20"
 		}
 	]
 }
