@@ -86,7 +86,7 @@
 			"salarioLiquido": 4900.00
 		}
 	],
-	"registrosPonto": [
+	"registroPonto": [
 		{
 			"id": 1,
 			"idColaborador": 1,
