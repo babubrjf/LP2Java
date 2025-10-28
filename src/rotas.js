@@ -5,6 +5,7 @@ import Login from './views/login';
 
 // Listagens
 import ListarColaboradores from './views/listar-colaboradores';
+import ListarDepartamentos from './views/listar-departamentos';
 
 // Cadastros
 import CadastroColaborador from './views/cadastro-colaborador';
@@ -19,6 +20,7 @@ function Rotas(props) {
         <Route path='/login' element={<Login />} />
         <Route path='/cadastro-colaboradores/:idParam?' element={<CadastroColaborador />} />
         <Route path='/listar-colaboradores' element={<ListarColaboradores />} />
+        <Route path='/listar-departamentos' element={<ListarDepartamentos />} />
       </Routes>
     </BrowserRouter>
   );

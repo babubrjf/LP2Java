@@ -71,7 +71,7 @@ function CadastroColaborador() {
 				<div className='row'>
 					<div className='col-lg-12'>
 						<div className='bs-component'>
-							<FormGroup label='Login: *' htmlFor='inputLogin'>
+							<FormGroup label='Nome Completo:' htmlFor='inputLogin'>
 								<input
 									type='text'
 									id='inputLogin'
@@ -81,7 +81,17 @@ function CadastroColaborador() {
 									onChange={(e) => setLogin(e.target.value)}
 								/>
 							</FormGroup>
-							<FormGroup label='CPF: *' htmlFor='inputCpf'>
+							<FormGroup label='Data de Nascimento:' htmlFor='inputLogin'>
+								<input
+									type='date'
+									id='inputLogin'
+									value={login}
+									className='form-control'
+									name='login'
+									onChange={(e) => setLogin(e.target.value)}
+								/>
+							</FormGroup>
+							<FormGroup label='CPF:' htmlFor='inputCpf'>
 								<input
 									type='text'
 									maxLength='11'
@@ -92,7 +102,7 @@ function CadastroColaborador() {
 									onChange={(e) => setCpf(e.target.value)}
 								/>
 							</FormGroup>
-							<FormGroup label='Senha: *' htmlFor='inputSenha'>
+							<FormGroup label='Senha:' htmlFor='inputSenha'>
 								<input
 									type='password'
 									id='inputSenha'
@@ -102,7 +112,7 @@ function CadastroColaborador() {
 									onChange={(e) => setSenha(e.target.value)}
 								/>
 							</FormGroup>
-							<FormGroup label='Repita a Senha: *' htmlFor='inputRepitaSenha'>
+							<FormGroup label='Repita a Senha:' htmlFor='inputRepitaSenha'>
 								<input
 									type='password'
 									id='inputRepitaSenha'
@@ -121,7 +131,7 @@ function CadastroColaborador() {
 									name='admin'
 									onChange={(e) => setAdmin(e.target.checked)}
 								/>
-								Administrador
+								Gerente
 							</FormGroup>
 							<Stack spacing={1} padding={1} direction='row'>
 								<button

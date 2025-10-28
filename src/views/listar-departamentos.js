@@ -16,17 +16,17 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/colaboradores`;
+const baseURL = `${BASE_URL}/departamentos`;
 
-function ListagemColaboradores() {
+function ListagemDepartamentos() {
 	const navigate = useNavigate();
 
 	const cadastrar = () => {
-		navigate(`/cadastro-colaboradores`);
+		navigate(`/cadastro-departamentos`);
 	};
 
 	const editar = (id) => {
-		navigate(`/cadastro-colaboradores/${id}`);
+		navigate(`/cadastro-departamentos/${id}`);
 	};
 
 	const [dados, setDados] = React.useState(null);
@@ -40,7 +40,7 @@ function ListagemColaboradores() {
 				headers: { 'Content-Type': 'application/json' },
 			})
 			.then(function (response) {
-				mensagemSucesso(`Usuário excluído com sucesso!`);
+				mensagemSucesso(`Departamento excluído com sucesso!`);
 				setDados(
 					dados.filter((dado) => {
 						return dado.id !== id;
@@ -48,7 +48,7 @@ function ListagemColaboradores() {
 				);
 			})
 			.catch(function (error) {
-				mensagemErro(`Erro ao excluir o usuário`);
+				mensagemErro(`Erro ao excluir o departamento.`);
 			});
 	}
 
@@ -62,25 +62,23 @@ function ListagemColaboradores() {
 
 	return (
 		<div className='container'>
-			<Card title='Listagem de Usuários'>
+			<Card title='Listagem de Departamentos'>
 				<div className='row'>
 					<div className='col-lg-12'>
 						<div className='bs-component'>
 							<table className='table table-hover'>
 								<thead>
 									<tr>
-										<th scope='col'>Login</th>
-										<th scope='col'>CPF</th>
-										<th scope='col'>Gerente</th>
+										<th scope='col'>Nome</th>
+										<th scope='col'>Possui Gerente?</th>
 										<th scope='col'>Ações</th>
 									</tr>
 								</thead>
 								<tbody>
 									{dados.map((dado) => (
 										<tr key={dado.id}>
-											<td>{dado.login}</td>
-											<td>{dado.cpf}</td>
-											<td>{dado.admin ? 'Sim' : 'Não'}</td>
+											<td>{dado.nome}</td>
+											<td>{dado.idGerente ? 'Sim' : 'Não'}</td>
 											<td>
 												<Stack spacing={1} padding={0} direction='row'>
 													<IconButton
@@ -106,7 +104,7 @@ function ListagemColaboradores() {
 								className='btn btn-primary'
 								onClick={() => cadastrar()}
 							>
-								Novo Colaborador
+								Novo Departamento
 							</button>
 						</div>
 					</div>
@@ -116,4 +114,4 @@ function ListagemColaboradores() {
 	);
 }
 
-export default ListagemColaboradores;
+export default ListagemDepartamentos;

@@ -1,0 +1,12 @@
+
+{
+  "colaboradores": [
+    { "id": 1, "login": "marcoantonio@email.com", "cpf": "111.111.111-11", "admin": true },
+  	{ "id": 2, "login": "pablorodrigues@email.com", "cpf": "222.222.222-22", "admin": false },
+  	{ "id": 3, "login": "carloseduardo@email.com", "cpf": "333.333.333-33", "admin": true }
+  ],
+  "departamentos": [
+    { "id": 1, "nome": "Desenvolvimento", "idGerente": 1 },
+    { "id": 2, "nome": "Recursos Humanos", "idGerente": 3 }
+  ]
+}
