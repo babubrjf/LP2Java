@@ -62,7 +62,7 @@ function ListagemColaboradores() {
 
 	return (
 		<div className='container'>
-			<Card title='Listagem de Usuários'>
+			<Card title='Listagem de Colaboradores'>
 				<div className='row'>
 					<div className='col-lg-12'>
 						<div className='bs-component'>

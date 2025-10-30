@@ -25,11 +25,11 @@ function ListagemDocumentos() {
 	const navigate = useNavigate();
 
 	const cadastrar = () => {
-		navigate(`/cadastrar-documentos`);
+		navigate(`/cadastro-documento`);
 	};
 
 	const editar = (id) => {
-		navigate(`/cadastrar-documentos/${id}`);
+		navigate(`/cadastro-documento/${id}`);
 	};
 
 	const [dados, setDados] = React.useState(null);

@@ -19,11 +19,11 @@ function ListagemDepartamentos() {
 	const navigate = useNavigate();
 
 	const cadastrar = () => {
-		navigate(`/cadastrar-departamentos`);
+		navigate(`/cadastro-departamento`);
 	};
 
 	const editar = (id) => {
-		navigate(`/cadastrar-departamentos/${id}`);
+		navigate(`/cadastro-departamento/${id}`);
 	};
 
 	const [dados, setDados] = React.useState(null);

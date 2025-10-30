@@ -14,7 +14,6 @@ import { BASE_URL } from '../config/axios';
 
 const baseURL = `${BASE_URL}/cargos`;
 
-// Função para formatar como moeda BRL
 const formatarMoeda = (valor) => {
 	return new Intl.NumberFormat('pt-BR', {
 		style: 'currency',
@@ -26,7 +25,7 @@ function ListarCargos() {
 	const navigate = useNavigate();
 
 	const cadastrar = () => {
-		navigate(`/listar-cargos`);
+		navigate(`/cadastro-cargo`);
 	};
 
 	const editar = (id) => {
