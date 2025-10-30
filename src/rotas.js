@@ -11,6 +11,10 @@ import ListarDocumentos from './views/listar-documentos';
 
 // Cadastros
 import CadastroColaborador from './views/cadastro-colaborador';
+import CadastroDepartamento from './views/cadastro-departamento';
+import CadastroCargo from './views/cadastro-cargo';
+import CadastroDocumento from './views/cadastro-documento';
+
 
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
@@ -21,6 +25,10 @@ function Rotas(props) {
 				<Route path="/" element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/cadastro-colaboradores/:idParam?' element={<CadastroColaborador />} />
+				<Route path='/cadastro-departamento/:idParam?' element={<CadastroDepartamento />} />
+				<Route path='/cadastro-cargo/:idParam?' element={<CadastroCargo />} />
+				<Route path='/cadastro-documento/:idParam?' element={<CadastroDocumento />} />
+
 				<Route path='/listar-colaboradores' element={<ListarColaboradores />} />
 				<Route path='/listar-departamentos' element={<ListarDepartamentos />} />
 				<Route path='/listar-cargos' element={<ListarCargos />} />
