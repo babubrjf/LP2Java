@@ -1,13 +1,9 @@
 import React from 'react';
 
 import Card from '../components/card';
-
 import { mensagemSucesso, mensagemErro } from '../components/toastr';
-
 import '../custom.css';
-
 import { useNavigate } from 'react-router-dom';
-
 import Stack from '@mui/material/Stack';
 import { IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -16,17 +12,25 @@ import EditIcon from '@mui/icons-material/Edit';
 import axios from 'axios';
 import { BASE_URL } from '../config/axios';
 
-const baseURL = `${BASE_URL}/colaboradores`;
+const baseURL = `${BASE_URL}/cargos`;
 
-function ListagemColaboradores() {
+// Função para formatar como moeda BRL
+const formatarMoeda = (valor) => {
+	return new Intl.NumberFormat('pt-BR', {
+		style: 'currency',
+		currency: 'BRL',
+	}).format(valor);
+};
+
+function ListarCargos() {
 	const navigate = useNavigate();
 
 	const cadastrar = () => {
-		navigate(`/cadastro-colaboradores`);
+		navigate(`/listar-cargos`);
 	};
 
 	const editar = (id) => {
-		navigate(`/cadastro-colaboradores/${id}`);
+		navigate(`/listar-cargos/${id}`);
 	};
 
 	const [dados, setDados] = React.useState(null);
@@ -34,13 +38,12 @@ function ListagemColaboradores() {
 	async function excluir(id) {
 		let data = JSON.stringify({ id });
 		let url = `${baseURL}/${id}`;
-		console.log(url);
 		await axios
 			.delete(url, data, {
 				headers: { 'Content-Type': 'application/json' },
 			})
 			.then(function (response) {
-				mensagemSucesso(`Usuário excluído com sucesso!`);
+				mensagemSucesso(`Cargo excluído com sucesso!`);
 				setDados(
 					dados.filter((dado) => {
 						return dado.id !== id;
@@ -48,7 +51,7 @@ function ListagemColaboradores() {
 				);
 			})
 			.catch(function (error) {
-				mensagemErro(`Erro ao excluir o usuário`);
+				mensagemErro(`Erro ao excluir o Cargo`);
 			});
 	}
 
@@ -62,25 +65,23 @@ function ListagemColaboradores() {
 
 	return (
 		<div className='container'>
-			<Card title='Listagem de Usuários'>
+			<Card title='Listagem de Cargos'>
 				<div className='row'>
 					<div className='col-lg-12'>
 						<div className='bs-component'>
 							<table className='table table-hover'>
 								<thead>
 									<tr>
-										<th scope='col'>Login</th>
-										<th scope='col'>CPF</th>
-										<th scope='col'>Gerente</th>
+										<th scope='col'>Nome</th>
+										<th scope='col'>Salário Base</th>
 										<th scope='col'>Ações</th>
 									</tr>
 								</thead>
 								<tbody>
 									{dados.map((dado) => (
 										<tr key={dado.id}>
-											<td>{dado.login}</td>
-											<td>{dado.cpf}</td>
-											<td>{dado.admin ? 'Sim' : 'Não'}</td>
+											<td>{dado.nome}</td>
+											<td>{formatarMoeda(dado.salarioBase)}</td>
 											<td>
 												<Stack spacing={1} padding={0} direction='row'>
 													<IconButton
@@ -101,12 +102,13 @@ function ListagemColaboradores() {
 									))}
 								</tbody>
 							</table>{' '}
-							<button 
+							<button
 								type='button'
+								style={{ float: 'right' }}
 								className='btn btn-primary'
 								onClick={() => cadastrar()}
 							>
-								Novo Colaborador
+								Novo Cargo
 							</button>
 						</div>
 					</div>
@@ -116,4 +118,4 @@ function ListagemColaboradores() {
 	);
 }
 
-export default ListagemColaboradores;
+export default ListarCargos;

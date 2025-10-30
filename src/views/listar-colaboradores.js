@@ -71,7 +71,6 @@ function ListagemColaboradores() {
 									<tr>
 										<th scope='col'>Login</th>
 										<th scope='col'>CPF</th>
-										<th scope='col'>Gerente</th>
 										<th scope='col'>Ações</th>
 									</tr>
 								</thead>
@@ -80,7 +79,6 @@ function ListagemColaboradores() {
 										<tr key={dado.id}>
 											<td>{dado.login}</td>
 											<td>{dado.cpf}</td>
-											<td>{dado.admin ? 'Sim' : 'Não'}</td>
 											<td>
 												<Stack spacing={1} padding={0} direction='row'>
 													<IconButton
@@ -101,8 +99,9 @@ function ListagemColaboradores() {
 									))}
 								</tbody>
 							</table>{' '}
-							<button 
+							<button
 								type='button'
+								style={{ float: 'right' }}
 								className='btn btn-primary'
 								onClick={() => cadastrar()}
 							>
