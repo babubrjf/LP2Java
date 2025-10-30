@@ -18,6 +18,7 @@ function CadastroColaborador() {
 	const [id, setId] = useState('');
 	const [login, setLogin] = useState('');
 	const [cpf, setCpf] = useState('');
+	const [dataNascimento, setDataNascimento] = useState('');
 	const [senha, setSenha] = useState('');
 	const [senhaRepeticao, setSenhaRepeticao] = useState('');
 	const [admin, setAdmin] = useState(false);
@@ -26,6 +27,7 @@ function CadastroColaborador() {
 		setId('');
 		setLogin('');
 		setCpf('');
+		setDataNascimento('');
 		setSenha('');
 		setSenhaRepeticao('');
 		setAdmin(false);
@@ -46,12 +48,14 @@ function CadastroColaborador() {
 			id: idParam,
 			login: 'colaborador.mockado',
 			cpf: '12345678900',
+			dataNascimento: '15/10/1996',
 			admin: true,
 		};
 
 		setId(mockData.id);
 		setLogin(mockData.login);
 		setCpf(mockData.cpf);
+		setDataNascimento(mockData.dataNascimento);
 		setSenha('');
 		setSenhaRepeticao('');
 		setAdmin(mockData.admin);
@@ -81,14 +85,14 @@ function CadastroColaborador() {
 									onChange={(e) => setLogin(e.target.value)}
 								/>
 							</FormGroup>
-							<FormGroup label='Data de Nascimento:' htmlFor='inputLogin'>
+							<FormGroup label='Data de Nascimento:' htmlFor='inputDataNascimento'>
 								<input
 									type='date'
-									id='inputLogin'
+									id='inputDataNascimento'
 									value={login}
 									className='form-control'
-									name='login'
-									onChange={(e) => setLogin(e.target.value)}
+									name='dataNascimento'
+									onChange={(e) => setDataNascimento(e.target.value)}
 								/>
 							</FormGroup>
 							<FormGroup label='CPF:' htmlFor='inputCpf'>
